@@ -15,11 +15,6 @@ public class SpringBootLibraryApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootLibraryApplication.class, args);
-
-		// test
-
-
-		int i = 0;
 	}
 
 }

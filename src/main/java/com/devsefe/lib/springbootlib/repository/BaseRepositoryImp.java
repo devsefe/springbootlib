@@ -1,5 +1,6 @@
 package com.devsefe.lib.springbootlib.repository;
 
+import com.devsefe.lib.springbootlib.core.ProcessResult;
 import org.springframework.data.jpa.repository.support.JpaEntityInformation;
 import org.springframework.data.jpa.repository.support.SimpleJpaRepository;
 
@@ -16,5 +17,37 @@ public class BaseRepositoryImp<T, ID extends Serializable>
         this.entityManager = entityManager;
     }
 
-    // Custom codes here...
+    /*@Override
+    public ProcessResult db_insert(T entity) {
+        ProcessResult result = new ProcessResult();
+        try {
+            result.setSucceeded(saveAndFlush(entity));
+        } catch (Exception ex)  {
+            result.setSysError(ex);
+        }
+        return result;
+    }
+
+    @Override
+    public ProcessResult db_update(T entity) {
+        ProcessResult result = new ProcessResult();
+        try {
+            result.setSucceeded(saveAndFlush(entity));
+        } catch (Exception ex)  {
+            result.setSysError(ex);
+        }
+        return result;
+    }
+
+    @Override
+    public ProcessResult db_delete(T entity) {
+        ProcessResult result = new ProcessResult();
+        try {
+            delete(entity);
+            result.setSucceeded(null);
+        } catch (Exception ex)  {
+            result.setSysError(ex);
+        }
+        return result;
+    }*/
 }
