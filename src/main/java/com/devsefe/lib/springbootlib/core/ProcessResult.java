@@ -3,7 +3,7 @@ package com.devsefe.lib.springbootlib.core;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ProcessResult {
+public final class ProcessResult {
 
     public String errorMsg;
 

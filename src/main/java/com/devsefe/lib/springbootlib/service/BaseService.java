@@ -15,7 +15,7 @@ public abstract class BaseService<T extends Serializable> {
         repository = baseRepository;
     }
 
-    protected ProcessResult insert(T entity) {
+    protected final ProcessResult insert(T entity) {
 
         ProcessResult result = new ProcessResult();
         try {
@@ -32,7 +32,7 @@ public abstract class BaseService<T extends Serializable> {
         return result;
     }
 
-    protected ProcessResult update(T entity) {
+    protected final ProcessResult update(T entity) {
 
         ProcessResult result = new ProcessResult();
         try {
@@ -49,7 +49,7 @@ public abstract class BaseService<T extends Serializable> {
         return result;
     }
 
-    protected ProcessResult delete(T entity) {
+    protected final ProcessResult delete(T entity) {
 
         ProcessResult result = new ProcessResult();
         try {
