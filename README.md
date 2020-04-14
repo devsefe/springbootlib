@@ -5,7 +5,7 @@ Core operations library for spring boot
 
 1-Create your repository then extend it from **BaseRepository**
 
-```
+```java
 public interface TestRepository extends BaseRepository<TestEntity, Integer> {
 }
 ```
