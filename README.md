@@ -11,7 +11,7 @@ public interface TestRepository extends BaseRepository<TestEntity, Integer> {
 ```
 2-Create your service then extend it from **BaseService**. After extending, implement service from **IService**.
 
-```
+```java
 public final class TestService extends BaseService<TestEntity>  implements IService<TestEntity> {
 
     private TestRepository repository;
@@ -61,8 +61,9 @@ public final class TestService extends BaseService<TestEntity>  implements IServ
         return super.validateDelete(entity);
     }
 ```
+
 3-Update your main class
-```
+```java
 @Configuration
 @SpringBootApplication
 @EnableJpaRepositories(repositoryBaseClass = BaseRepositoryImp.class)
@@ -76,8 +77,9 @@ public class DemoApplication {
 
 }
 ```
+
 4-Create your controller. Autowire service.
-```
+```java
 @RestController
 @RequestMapping("/rest/users")
 public class TestController {
