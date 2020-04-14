@@ -21,26 +21,43 @@ public final class TestService extends BaseService<TestEntity>  implements IServ
         repository = testRepository;
     }
 
+    /**
+    * from IService
+    **/
     @Override
     public ProcessResult insert(TestEntity entity) {
         return super.db_insert(entity);
     }
 
+    /**
+    * from IService
+    **/
     @Override
     public ProcessResult update(TestEntity entity) {
         return null;
     }
 
+    /**
+    * from IService
+    **/
     @Override
     public ProcessResult delete(TestEntity entity) {
         return null;
     }
 
+    /**
+    * from base
+    **/
+    @Override
     @Override
     protected ProcessResult validateAlter(TestEntity entity) {
         return super.validateAlter(entity);
     }
 
+    /**
+    * from base
+    **/
+    @Override
     @Override
     protected ProcessResult validateDelete(TestEntity entity) {
         return super.validateDelete(entity);
