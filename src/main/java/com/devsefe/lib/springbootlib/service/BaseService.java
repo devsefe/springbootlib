@@ -7,6 +7,14 @@ import org.springframework.stereotype.Service;
 import java.io.Serializable;
 
 @Service
+/*
+  Abstract base class for service layers. Main duty of this class is managing base operations in one place.
+
+  Beyond this, class has main DB operations which are insert, update, delete.
+  When use these methods instead of repository, these methods are check operations in a try block and before insert, update or delete, it uses override validation methods.
+
+  Pass your repository as a parameter in base service. Service'll use your repository for DB operations.
+  **/
 public abstract class BaseService<T extends Serializable> {
 
     private BaseRepository repository;

@@ -9,9 +9,4 @@ import java.io.Serializable;
 @NoRepositoryBean
 public interface BaseRepository<T, ID extends Serializable> extends JpaRepository<T, ID> {
 
-   /* ProcessResult db_insert(T entity);
-
-    ProcessResult db_update(T entity);
-
-    ProcessResult db_delete(T entity);*/
 }
