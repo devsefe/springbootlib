@@ -49,7 +49,6 @@ public final class TestService extends BaseService<TestEntity>  implements IServ
     * from base
     **/
     @Override
-    @Override
     protected ProcessResult validateAlter(TestEntity entity) {
         return super.validateAlter(entity);
     }
@@ -58,8 +57,37 @@ public final class TestService extends BaseService<TestEntity>  implements IServ
     * from base
     **/
     @Override
-    @Override
     protected ProcessResult validateDelete(TestEntity entity) {
         return super.validateDelete(entity);
     }
+```
+3-Update your main class
+```
+@Configuration
+@SpringBootApplication
+@EnableJpaRepositories(repositoryBaseClass = BaseRepositoryImp.class)
+@EntityScan(basePackages = {"your package info for entity directory"})
+public class DemoApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(DemoApplication.class, args);
+
+	}
+
+}
+```
+4-Create your controller. Autowire service.
+```
+@RestController
+@RequestMapping("/rest/users")
+public class TestController {
+
+    @Autowired
+    private TestService testService;
+
+    @GetMapping
+    public User getUser() {
+        return testService.#your_method_name#();
+    }
+}
 ```
